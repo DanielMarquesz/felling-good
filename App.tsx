@@ -1,18 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import LoginScreen from './App/Components/Login/login';
+import React from 'react';
+import Navigation from './App/Navigation/navigation';
+// import Navigation from './navigation';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <LoginScreen></LoginScreen>    
-    </View>
+    <Navigation />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});

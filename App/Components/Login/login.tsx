@@ -3,20 +3,25 @@ import {
   View,
   Text,
   TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  Image,
+  TouchableOpacity,  
   KeyboardAvoidingView,
   Platform,
   SafeAreaView,
-  StatusBar,
-  Dimensions,
+  StatusBar,  
 } from 'react-native';
 import { LoginStyles } from './login.styles';
+import { useNavigation } from '@react-navigation/native';
 
-const { width, height } = Dimensions.get('window');
 
 const LoginScreen: React.FC = () => {
+
+  const navigation = useNavigation();
+
+  const handleLogin = () => {
+    navigation.navigate('Home');
+  };
+
+
   return (
     <SafeAreaView style={LoginStyles.safeArea}>
       <StatusBar barStyle="light-content" backgroundColor="#1a1a1a" />
@@ -51,7 +56,7 @@ const LoginScreen: React.FC = () => {
           />
 
           {/* Login Button */}
-          <TouchableOpacity style={LoginStyles.loginButton}>
+          <TouchableOpacity style={LoginStyles.loginButton} onPress={handleLogin}>
             <Text style={LoginStyles.loginButtonText}>Login</Text>
           </TouchableOpacity>
 
