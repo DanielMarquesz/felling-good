@@ -9,6 +9,7 @@ import {
   Dimensions,
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
+import { useNavigation } from '@react-navigation/native';
 
 const { width, height } = Dimensions.get('window');
 
@@ -26,6 +27,12 @@ const CheckIcon = () => (
 );
 
 const AnswerScreen: React.FC = () => {
+  const navigation = useNavigation();
+
+  const handleSettings = () => {
+    navigation.navigate('Settings'); // Navega para a tela de configurações
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" backgroundColor="#1a1a1a" />
@@ -33,7 +40,7 @@ const AnswerScreen: React.FC = () => {
         {/* Header */}
         <View style={styles.header}>
           <Text style={styles.headerTitle}>Home</Text>
-          <TouchableOpacity style={styles.settingsButton}>
+          <TouchableOpacity style={styles.settingsButton} onPress={handleSettings}>
             <Text style={styles.settingsIcon}>⚙</Text>
           </TouchableOpacity>
         </View>

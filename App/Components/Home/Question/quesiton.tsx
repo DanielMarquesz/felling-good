@@ -35,6 +35,10 @@ const HomeScreen: React.FC = () => {
     navigation.navigate('Answer');
   };
 
+  const settingsScreen = () => {
+    navigation.navigate('Settings');
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" backgroundColor="#1a1a1a" />
@@ -42,7 +46,7 @@ const HomeScreen: React.FC = () => {
         {/* Header */}
         <View style={styles.header}>
           <Text style={styles.headerTitle}>Home</Text>
-          <TouchableOpacity style={styles.settingsButton}>
+          <TouchableOpacity style={styles.settingsButton} onPress={settingsScreen}>
             <Text style={styles.settingsIcon}>⚙</Text>
           </TouchableOpacity>
         </View>
