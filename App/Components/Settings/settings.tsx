@@ -37,6 +37,10 @@ const SettingsScreen: React.FC = () => {
     navigation.navigate('Home');
   };
 
+  const handleNotificationSettings = () => {
+    navigation.navigate('SettingsNavigation');
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" backgroundColor="#1a1a1a" />
@@ -57,7 +61,7 @@ const SettingsScreen: React.FC = () => {
           <SettingsCard
             title="Notification Settings"
             description="Set the amount of requests per day"
-            onPress={() => console.log('Notification Settings pressed')}
+            onPress={handleNotificationSettings}
           />
           <SettingsCard
             title="Contact Management"
