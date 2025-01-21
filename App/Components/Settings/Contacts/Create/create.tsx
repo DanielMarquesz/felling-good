@@ -6,7 +6,9 @@ import {
   TouchableOpacity,
   StyleSheet,
   SafeAreaView,
+  StatusBar,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useNavigation } from '@react-navigation/native';
 
 interface ContactInfoProps {}
@@ -20,81 +22,91 @@ const ContactInfoScreen: React.FC<ContactInfoProps> = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity 
-          onPress={() => navigation.goBack()} 
-          style={styles.backButton}
-        >
-          <Text style={styles.backButtonText}>←</Text>
-        </TouchableOpacity>
-        <Text style={styles.headerTitle}>Contact Information</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-          <Text style={styles.homeIcon}>⌂</Text>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.content}>
-        <Text style={styles.sectionTitle}>Personal Details</Text>
-        
-        <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.input}
-            placeholder="Name"
-            placeholderTextColor="#666"
-          />
-          
-          <TextInput
-            style={styles.input}
-            placeholder="Phone number"
-            placeholderTextColor="#666"
-            keyboardType="phone-pad"
-          />
+    <SafeAreaView style={styles.safeArea}>
+      <StatusBar barStyle="light-content" backgroundColor="#1a1a1a" />
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <View style={styles.headerLeft}>
+            <TouchableOpacity 
+              onPress={() => navigation.goBack()} 
+              style={styles.headerButton}
+            >
+              <Icon name="arrow-back" size={24} color="#fff" />
+            </TouchableOpacity>
+            <Text style={styles.headerTitle}>Contact Information</Text>
+          </View>
+          <TouchableOpacity 
+            onPress={() => navigation.navigate('Home')} 
+            style={styles.headerButton}
+          >
+            <Icon name="home" size={24} color="#fff" />
+          </TouchableOpacity>
         </View>
 
-        <TouchableOpacity 
-          style={styles.saveButton}
-          onPress={handleSave}
-        >
-          <Text style={styles.saveButtonText}>Save</Text>
-        </TouchableOpacity>
+        <View style={styles.content}>
+          <Text style={styles.sectionTitle}>Personal Details</Text>
+          
+          <View style={styles.inputContainer}>
+            <TextInput
+              style={styles.input}
+              placeholder="Name"
+              placeholderTextColor="#666"
+            />
+            
+            <TextInput
+              style={styles.input}
+              placeholder="Phone number"
+              placeholderTextColor="#666"
+              keyboardType="phone-pad"
+            />
+          </View>
+
+          <TouchableOpacity 
+            style={styles.saveButton}
+            onPress={handleSave}
+          >
+            <Text style={styles.saveButtonText}>Save</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#1a1a1a',
+  },
   container: {
     flex: 1,
     backgroundColor: '#1a1a1a',
   },
   header: {
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
-    padding: 16,
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
     borderBottomWidth: 1,
     borderBottomColor: '#333',
   },
-  backButton: {
-    padding: 8,
+  headerLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  backButtonText: {
-    color: '#fff',
-    fontSize: 20,
+  headerButton: {
+    padding: 5,
   },
   headerTitle: {
     color: '#fff',
-    fontSize: 18,
-    fontWeight: '500',
-  },
-  homeIcon: {
-    color: '#fff',
     fontSize: 20,
+    fontWeight: '600',
+    marginLeft: 15,
   },
   content: {
     flex: 1,
-    padding: 16,
+    padding: 20,
   },
   sectionTitle: {
     color: '#fff',

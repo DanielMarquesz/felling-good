@@ -51,7 +51,7 @@ const ContactScreen: React.FC = () => {
   };
 
   const handleAdd = () => {
-    console.log('Add new contact');
+    navigation.navigate('ContactInfo');
   };
 
   return (
