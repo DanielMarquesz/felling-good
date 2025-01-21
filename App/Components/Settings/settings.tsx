@@ -41,6 +41,11 @@ const SettingsScreen: React.FC = () => {
     navigation.navigate('SettingsNavigation');
   };
 
+  const handleContactSettings = () => {
+    navigation.navigate('Contact');
+  };
+
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" backgroundColor="#1a1a1a" />
@@ -66,7 +71,7 @@ const SettingsScreen: React.FC = () => {
           <SettingsCard
             title="Contact Management"
             description="Manage emergency contacts"
-            onPress={() => console.log('Contact Management pressed')}
+            onPress={handleContactSettings}
           />
           <SettingsCard
             title="Subscription Options"

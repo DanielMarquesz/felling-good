@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import AnswerScreen from '../Components/Home/Question/answer';
 import SettingsScreen from '../Components/Settings/settings';
 import NotificationSettingsScreen from '../Components/Settings/Notifications/notifications';
+import ContactScreen from '../Components/Settings/Contacts/contacts';
 
 
 const Stack = createStackNavigator();
@@ -19,6 +20,7 @@ const Navigation = () => {
       <Stack.Screen name="Answer" component={AnswerScreen} options={{headerShown: false}}/>
       <Stack.Screen name="Settings" component={SettingsScreen} options={{headerShown: false}}/>
       <Stack.Screen name="SettingsNavigation" component={NotificationSettingsScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="Contact" component={ContactScreen} options={{headerShown: false}}/>
     </Stack.Navigator>
     </NavigationContainer>
   );
