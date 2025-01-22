@@ -45,6 +45,9 @@ const SettingsScreen: React.FC = () => {
     navigation.navigate('Contact');
   };
 
+  const handleSubscription = () => {
+    navigation.navigate('Subscription');
+  };
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -76,7 +79,7 @@ const SettingsScreen: React.FC = () => {
           <SettingsCard
             title="Subscription Options"
             description="Manage your subscription"
-            onPress={() => console.log('Subscription Options pressed')}
+            onPress={handleSubscription}
           />
         </View>
       </View>

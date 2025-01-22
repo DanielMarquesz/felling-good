@@ -8,10 +8,11 @@ import SettingsScreen from '../Components/Settings/settings';
 import NotificationSettingsScreen from '../Components/Settings/Notifications/notifications';
 import ContactScreen from '../Components/Settings/Contacts/contacts';
 import ContactInfoScreen from '../Components/Settings/Contacts/Create/create';
+import SubscriptionScreen from '../Components/Settings/Subscription/subscription';
 
 
 const Stack = createStackNavigator();
-
+// SubscriptionScreen
 const Navigation = () => {
   return (
     <NavigationContainer>
@@ -23,6 +24,7 @@ const Navigation = () => {
       <Stack.Screen name="SettingsNavigation" component={NotificationSettingsScreen} options={{headerShown: false}}/>
       <Stack.Screen name="Contact" component={ContactScreen} options={{headerShown: false}}/>
       <Stack.Screen name="ContactInfo" component={ContactInfoScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="Subscription" component={SubscriptionScreen} options={{headerShown: false}}/>
     </Stack.Navigator>
     </NavigationContainer>
   );
